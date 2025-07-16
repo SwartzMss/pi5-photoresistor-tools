@@ -13,7 +13,7 @@
 确保已安装 `RPi.GPIO`，然后执行:
 
 ```bash
-python3 read_photoresistor.py
+python3 main.py
 ```
 
 脚本每秒打印一次测定的光照值。
