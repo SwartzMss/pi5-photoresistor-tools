@@ -22,7 +22,11 @@ python3 read_photoresistor.py
 ## 文件
 
 - `read_photoresistor.py` — 使用 GPIO4 读取光敏电阻的 Python 示例脚本
-- `device.jpg` — 实物照片，可供参考
+- `doc/device.jpg` — 实物照片，可供参考
+
+## 实物照片
+
+![device](doc/device.jpg)
 
 ## License
 
