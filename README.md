@@ -19,7 +19,7 @@ python3 read_photoresistor.py
 脚本每秒打印一次测定的光照值。
 
 ## 实物照片
-![device](doc/device.jpg)
+<img src="doc/device.jpg" alt="Device" width="300" />
 
 ## License
 
