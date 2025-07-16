@@ -10,7 +10,7 @@
 3. **DATA** → 默认连接至 GPIO17（可使用 `--pin` 参数修改）
 ## 运行示例
 
-确保已安装 `RPi.GPIO`，然后执行:
+确保已安装 `lgpio`，然后执行:
 
 ```bash
 python3 main.py

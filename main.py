@@ -1,6 +1,6 @@
 import argparse
 import time
-import RPi.GPIO as GPIO  # type: ignore
+import lgpio
 
 from photoresistor import rc_time
 
@@ -15,14 +15,14 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    GPIO.setmode(GPIO.BCM)
+    handle = lgpio.gpiochip_open(0)
     try:
         while True:
-            value = rc_time(args.pin)
+            value = rc_time(handle, args.pin)
             print(f"\u5149\u7167\u503C: {value}")
             time.sleep(1)
     finally:
-        GPIO.cleanup()
+        lgpio.gpiochip_close(handle)
 
 
 if __name__ == "__main__":
