@@ -1,17 +1,17 @@
 import time
-import RPi.GPIO as GPIO  # type: ignore
+import lgpio
 
 
 __all__ = ["rc_time"]
 
 
-def rc_time(pin: int) -> int:
+def rc_time(handle: int, pin: int) -> int:
     """Return the charge time for the given GPIO pin."""
     count = 0
-    GPIO.setup(pin, GPIO.OUT)
-    GPIO.output(pin, GPIO.LOW)
+    lgpio.gpio_claim_output(handle, pin, lgpio.LOW)
     time.sleep(0.1)
-    GPIO.setup(pin, GPIO.IN)
-    while GPIO.input(pin) == GPIO.LOW:
+    lgpio.gpio_claim_input(handle, pin)
+    while lgpio.gpio_read(handle, pin) == lgpio.LOW:
         count += 1
+    lgpio.gpio_free(handle, pin)
     return count
